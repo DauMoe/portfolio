@@ -1,16 +1,30 @@
 import { NextPage } from "next";
 import { HomePageProps } from "../HomePage";
 import { RiMoonClearFill } from 'react-icons/ri';
+import { BsSunFill } from 'react-icons/bs';
 import { IconContext } from "react-icons/lib";
-import { useEffect, useState } from "react";
+import { useDarkModeContext } from "../Context/DarkMode";
+import { useEffect } from 'react';
+import { DARK_MODE_LOCAL_STOGARE } from "../ConstantVariable";
+
+const ToggleDarkMode = (mode: Boolean, setMode: Function) => {
+  setMode(mode);
+}
 
 export const Header:NextPage<HomePageProps> = ({
   language,
   ...props
 }) => {
-  const [theme, setTheme] = useState('dark');
+  const { currentMode, toggleMode } = useDarkModeContext();
   useEffect(() => {
+    const isDarkModeOS      : boolean       = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDarkModePrevious: string | null = localStorage.getItem(DARK_MODE_LOCAL_STOGARE);
 
+    if (isDarkModePrevious !== null) {
+      toggleMode(isDarkModePrevious === "false" ? false : true);
+    } else {
+      toggleMode(isDarkModeOS);
+    }
   }, []);
 
   return(
@@ -40,9 +54,9 @@ export const Header:NextPage<HomePageProps> = ({
 
         <div>
           {/* <a href="#" className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Download</a> */}
-          <div className="m-2 p-2 rounded align-middle cursor-pointer inline-block bg-black dark:bg-white text-center">
-            <IconContext.Provider value={{size: '18px'}}>
-              <RiMoonClearFill/>
+          <div className="m-2 p-2 rounded align-middle cursor-pointer inline-block bg-slate-600 dark:bg-white text-center" onClick={() => ToggleDarkMode(!currentMode, toggleMode)}>
+            <IconContext.Provider value={{size: '18px', color: currentMode ? 'black' : 'white'}}>
+              {currentMode ? <RiMoonClearFill/> : <BsSunFill/>}
             </IconContext.Provider>
           </div>
         </div>

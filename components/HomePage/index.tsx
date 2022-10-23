@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import { Header } from "../Header";
-import { LANG, LANGUAGE_TYPE } from "../Language";
+import { LANG } from "../Language";
 
 export type HomePageProps = {
   language: LANG
@@ -12,8 +12,7 @@ export const HomePage: NextPage<HomePageProps> = ({
 }) => {
   return(
     <section className='dark:bg-slate-800 bg-white h-screen w-screen relative'>
-      <Header language={language}/>
-      
+      <Header language={language}/>      
     </section>
   )
 }
