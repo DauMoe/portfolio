@@ -3,9 +3,11 @@ import { HomePageProps } from "../HomePage";
 import { RiMoonClearFill } from 'react-icons/ri';
 import { BsSunFill } from 'react-icons/bs';
 import { IconContext } from "react-icons/lib";
-import { useDarkModeContext } from "../Context/DarkMode";
 import { useEffect } from 'react';
 import { DARK_MODE_LOCAL_STOGARE } from "../ConstantVariable";
+import { useGlobalContext } from "../Context";
+import { LANG_ITEM } from "../Language";
+import Link from "next/link";
 
 const ToggleDarkMode = (mode: Boolean, setMode: Function) => {
   setMode(mode);
@@ -15,7 +17,7 @@ export const Header:NextPage<HomePageProps> = ({
   language,
   ...props
 }) => {
-  const { currentMode, toggleMode } = useDarkModeContext();
+  const { currentMode, toggleMode } = useGlobalContext();
   useEffect(() => {
     const isDarkModeOS      : boolean       = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     const isDarkModePrevious: string | null = localStorage.getItem(DARK_MODE_LOCAL_STOGARE);
@@ -28,7 +30,7 @@ export const Header:NextPage<HomePageProps> = ({
   }, []);
 
   return(
-    <nav className="flex items-center justify-between flex-wrap p-6">
+    <nav className="flex items-center justify-between flex-wrap p-6 fixed top-0 z-50 w-full">
       <div className="flex items-center flex-shrink-0 text-white mr-6">
         <svg className="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
         <span className="font-semibold text-xl text-black dark:text-white tracking-tight">Portfolio</span>
@@ -40,22 +42,19 @@ export const Header:NextPage<HomePageProps> = ({
       </div>
 
       <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-        <div className="text-sm lg:flex-grow">
-          <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-black dark:text-white mr-4">
-            Docs
-          </a>
-          <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-black dark:text-white mr-4">
-            Examples
-          </a>
-          <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-black dark:text-white">
-            Blog
-          </a>
+      <div className="text-sm lg:flex-grow">
+        {Array.isArray(language.navbarItem) && language.navbarItem.map((navItem: LANG_ITEM, index: number) => {
+          return(
+            <Link href={navItem.href}>
+              <a className="block mt-4 lg:inline-block lg:mt-0 text-black dark:text-white mr-4">{navItem.content}</a>
+            </Link>
+          )
+        })}
         </div>
-
         <div>
           {/* <a href="#" className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Download</a> */}
-          <div className="m-2 p-2 rounded align-middle cursor-pointer inline-block bg-slate-600 dark:bg-white text-center" onClick={() => ToggleDarkMode(!currentMode, toggleMode)}>
-            <IconContext.Provider value={{size: '18px', color: currentMode ? 'black' : 'white'}}>
+          <div className="m-2 p-2 rounded-md align-middle cursor-pointer inline-block border-2 border-black dark:bg-white dark:border-white text-center" onClick={() => ToggleDarkMode(!currentMode, toggleMode)}>
+            <IconContext.Provider value={{size: '18px'}}>
               {currentMode ? <RiMoonClearFill/> : <BsSunFill/>}
             </IconContext.Provider>
           </div>
