@@ -12,9 +12,9 @@ export const HomePage: NextPage<HomePageProps> = ({
   ...props
 }) => {
   return(
-    <section className='dark:bg-slate-800 bg-slate-100 h-screen relative w-full' id="home">
+    <section className='h-screen relative w-full' id="home">
       <div className='w-1/2 h-full absolute'>
-        <div className='absolute w-3/4 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
+        <div className='absolute w-3/5 top-1/2 -translate-y-1/2 right-36'>
           <Image
             src={ellipse}
             alt="Big orange here"
@@ -22,10 +22,10 @@ export const HomePage: NextPage<HomePageProps> = ({
         </div>
       </div>
       <div className='w-1/2 h-full absolute right-0'>
-        <div className='absolute top-1/2 -translate-y-2/3 px-1/10'>
+        <div className='absolute top-1/2 -translate-y-2/3 pr-1/2'>
           <p className='text-slate-800 dark:text-white text-5xl font-bold'>{language.homePage.title}</p>
           <p className='text-slate-800 dark:text-white text-lg my-6'>{language.homePage.position}</p>
-          <p className='text-slate-800 dark:text-white text-lg'>{language.homePage.description}</p>
+          <p className='text-slate-800 dark:text-white text-lg leading-relaxed'>{language.homePage.description}</p>
         </div>
       </div>
     </section>

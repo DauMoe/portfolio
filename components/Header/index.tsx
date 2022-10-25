@@ -30,7 +30,7 @@ export const Header:NextPage<HomePageProps> = ({
   }, []);
 
   return(
-    <nav className="flex items-center justify-between flex-wrap p-6 fixed top-0 z-50 w-full">
+    <nav className="flex items-center justify-between flex-wrap p-6 fixed top-0 z-50 w-full bg-slate-100 dark:bg-slate-800">
       <div className="flex items-center flex-shrink-0 text-white mr-6">
         <svg className="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
         <span className="font-semibold text-xl text-black dark:text-white tracking-tight">Portfolio</span>
@@ -45,8 +45,8 @@ export const Header:NextPage<HomePageProps> = ({
       <div className="text-sm lg:flex-grow">
         {Array.isArray(language.navbarItem) && language.navbarItem.map((navItem: LANG_ITEM, index: number) => {
           return(
-            <Link href={navItem.href}>
-              <a className="block mt-4 lg:inline-block lg:mt-0 text-black dark:text-white mr-4">{navItem.content}</a>
+            <Link href={navItem.href} key={"_header_" + index}>
+              <a className={"block mt-4 lg:inline-block lg:mt-0 text-black dark:text-white " + (index === 0 ? 'ml-10' : 'ml-6')}>{navItem.content}</a>
             </Link>
           )
         })}
