@@ -16,22 +16,22 @@ export const Footer: NextPage<FooterProps> = ({
     <div id="contact">
       <div className="bg-slate-300 dark:bg-slate-900 relative z-40 px-16 transition delay-150">
         <div className="flex flex-row justify-around py-[40px]">
-          <a href={"https://zalo.me/0339571946"} target="_blank" rel='noreferer'>
+          <a href={"https://zalo.me/0339571946"} target="_blank" rel="noopener noreferrer">
             <IconContext.Provider value={{size: '60'}}>
               <SiZalo className="text-slate-100 hover:text-slate-700 dark:text-slate-800 dark:hover:text-white transition hover:delay-150 cursor-pointer"/>
             </IconContext.Provider>
           </a>
-          <a href={"https://join.skype.com/invite/gd506hPdoeTv"} target="_blank" rel='noreferer'>
+          <a href={"https://join.skype.com/invite/gd506hPdoeTv"} target="_blank" rel="noopener noreferrer">
             <IconContext.Provider value={{size: '60'}}>
               <BsSkype className="text-slate-100 hover:text-slate-700 dark:text-slate-800 dark:hover:text-white transition hover:delay-150 cursor-pointer"/>
             </IconContext.Provider>
           </a>
-          <a href={"https://www.linkedin.com/in/le-hoang-webdev/"} target="_blank" rel='noreferer'>
+          <a href={"https://www.linkedin.com/in/le-hoang-webdev/"} target="_blank" rel="noopener noreferrer">
             <IconContext.Provider value={{size: '60'}}>
                 <BsLinkedin className="text-slate-100 hover:text-slate-700 dark:text-slate-800 dark:hover:text-white transition hover:delay-150 cursor-pointer"/>
               </IconContext.Provider>
           </a>
-          <a href={"https://github.com/DauMoe"} target="_blank" rel='noreferer'>
+          <a href={"https://github.com/DauMoe"} target="_blank" rel="noopener noreferrer">
             <IconContext.Provider value={{size: '60'}}>
               <BsGithub className="text-slate-100 hover:text-slate-700 dark:text-slate-800 dark:hover:text-white transition hover:delay-150 cursor-pointer"/>
             </IconContext.Provider>

@@ -36,7 +36,7 @@ export const HomePage: NextPage<HomePageProps> = ({
               <FaPaperPlane className="ml-1"/>
             </IconContext.Provider>
           </div>
-            <a href="/my_cv.pdf" target='_blank' rel='noreferer' className="flex items-center text-base font-medium ml-4 pl-4 pr-3 py-3 leading-none border-2 rounded text-black border-black dark:text-white dark:border-white cursor-pointer">
+            <a href="/my_cv.pdf" target='_blank' rel="noopener noreferrer" className="flex items-center text-base font-medium ml-4 pl-4 pr-3 py-3 leading-none border-2 rounded text-black border-black dark:text-white dark:border-white cursor-pointer">
               <span>My Resume</span>
               <IconContext.Provider value={{size: '20'}}>
                 <BsPaperclip/>
