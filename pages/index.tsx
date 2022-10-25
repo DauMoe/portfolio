@@ -19,7 +19,7 @@ const Home: NextPage = () => {
         <title>{language.pageTitle.welcome}!</title>
         <meta property="og:title" content={language.pageTitle.welcome} key="title" />
       </Head>
-      <div className='dark:bg-slate-800 bg-slate-100'>
+      <div className='transition delay-150 dark:bg-slate-800 bg-slate-100'>
         <Header language={language}/>   
         <HomePage language={language}/>
         <Skills language={language}/>
