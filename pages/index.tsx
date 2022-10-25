@@ -6,6 +6,7 @@ import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
 import { HomePage } from '../components/HomePage'
 import { lang } from '../components/Language'
+import { Projects } from '../components/Projects';
 import { Skills } from '../components/Skills';
 import { Timeline } from '../components/Timeline';
 
@@ -24,6 +25,7 @@ const Home: NextPage = () => {
         <HomePage language={language}/>
         <Skills language={language}/>
         <Timeline language={language}/>
+        <Projects language={language}/>
         <Footer language={language}/>
         <Contact/>
       </div>
