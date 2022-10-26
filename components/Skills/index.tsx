@@ -6,15 +6,16 @@ import { TbBrandNextjs } from 'react-icons/tb';
 import { FaNodeJs } from 'react-icons/fa';
 import { SiMariadb } from 'react-icons/si';
 import { useGlobalContext } from "../Context";
+import { forwardRef } from "react";
 
 export type SkillsProps = {
   language: LANG_ITEM
 }
 
-export const Skills: NextPage<SkillsProps> = () => {
+export const Skills = forwardRef<HTMLDivElement, SkillsProps>(({language, ...props}, SkillsPageRef) => {
   const { currentMode } = useGlobalContext();
   return(
-    <section className="min-h-screen relative" id="skills">
+    <div className="min-h-screen relative" ref={SkillsPageRef}>
       <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
         <p className="text-slate-800 dark:text-white font-bold text-4xl text-center">Skills</p>
         <div className="mt-14 flex justify-around">
@@ -37,6 +38,6 @@ export const Skills: NextPage<SkillsProps> = () => {
           </IconContext.Provider>
         </div>
       </div>
-    </section>
+    </div>
   )
-}
+});

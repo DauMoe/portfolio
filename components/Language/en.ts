@@ -2,24 +2,13 @@ const _EN = {
   pageTitle: {
     welcome: "Hi"
   },
-  navbarItem: [
-   {
-      content: "Home",
-      href: "#home"
-    }, {
-      content: "Skills",
-      href: "#skills"
-    }, {
-      content: "Timeline",
-      href: "#timeline"
-    }, {
-      content: "Projects",
-      href: "#projects"
-    }, {
-      content: "Contact",
-      href: "#contact"
-    }
-  ],
+  navbarItem: {
+    home: "Home",
+    skills: "Skills",
+    timeline: "Timeline",
+    projects: "Projects",
+    contact: "Contact"
+  },
   homePage: {
     title: "Hi, Iam Hoàng",
     position: "Frontend Developer",

@@ -1,16 +1,13 @@
-import { NextPage } from "next";
+import { forwardRef } from "react";
 import { LANG_ITEM } from "../Language";
 
 export type TimelineProps = {
   language: LANG_ITEM
 }
 
-export const Timeline: NextPage<TimelineProps> = ({
-  language,
-  ...props
-}) => {
+export const Timeline = forwardRef<HTMLDivElement, TimelineProps>(({language, ...props}, TimelinePageRef) => {
   return (
-    <section className="min-h-screen relative" id="timeline">
+    <div className="min-h-screen relative" ref={TimelinePageRef}>
       <div className="absolute w-4/10 top-1/2 h-full -translate-y-1/2">
         <div className="absolute top-1/2 -translate-y-1/2 right-16">
           <p className="text-slate-800 dark:text-white font-bold text-4xl">{language.timelinePage.timelineTitle}</p>
@@ -31,6 +28,6 @@ export const Timeline: NextPage<TimelineProps> = ({
           })}
         </div>
       </div>
-    </section>
+    </div>
   );
-}
+});

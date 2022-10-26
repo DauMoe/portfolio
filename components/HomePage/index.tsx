@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { forwardRef, useRef } from "react";
 import { IconContext } from "react-icons";
 import { BsPaperclip } from "react-icons/bs";
 import { FaPaperPlane } from "react-icons/fa";
@@ -11,12 +12,9 @@ export type HomePageProps = {
   language: LANG_ITEM
 }
 
-export const HomePage: NextPage<HomePageProps> = ({
-  language,
-  ...props
-}) => {
+export const HomePage = forwardRef<HTMLDivElement, HomePageProps>(({language, ...props}, HomePageRef) => {
   return(
-    <section className='h-screen relative w-full' id="home">
+    <div className='h-screen relative w-full' ref={HomePageRef}>
       <div className='w-1/2 h-full absolute'>
         <div className='absolute w-3/5 top-1/2 -translate-y-1/2 right-36'>
           <Image
@@ -48,6 +46,6 @@ export const HomePage: NextPage<HomePageProps> = ({
           </div>
         </div>
       </div>
-    </section>
+    </div>
   )
-}
+});

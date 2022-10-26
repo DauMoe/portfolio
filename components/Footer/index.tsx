@@ -4,17 +4,15 @@ import { IconContext } from 'react-icons';
 import { SiZalo } from "react-icons/si";
 import { BsGithub, BsLinkedin, BsSkype } from 'react-icons/bs';
 import Link from "next/link";
+import { forwardRef } from "react";
 
 export type FooterProps = {
   language: LANG_ITEM
 }
 
-export const Footer: NextPage<FooterProps> = ({
-  language,
-  ...props
-}) => {
+export const Footer = forwardRef<HTMLDivElement, FooterProps>(({language, ...props}, ContactPageRef) => {
   return(
-    <div id="contact">
+    <div ref={ContactPageRef}>
       <div className="bg-slate-300 dark:bg-slate-900 relative z-40 px-16 transition delay-150">
         <div className="flex flex-row justify-around py-[40px]">
           <Link href={"https://zalo.me/0339571946"} passHref>
@@ -62,4 +60,4 @@ export const Footer: NextPage<FooterProps> = ({
       </div>
     </div>
   );
-}
+});

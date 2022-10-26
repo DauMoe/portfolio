@@ -3,7 +3,7 @@ import { HomePageProps } from "../HomePage";
 import { RiMoonClearFill } from 'react-icons/ri';
 import { BsSunFill } from 'react-icons/bs';
 import { IconContext } from "react-icons/lib";
-import { useEffect } from 'react';
+import React, { Ref, RefObject, useEffect } from 'react';
 import { DARK_MODE_LOCAL_STOGARE } from "../ConstantVariable";
 import { useGlobalContext } from "../Context";
 import { LANG_ITEM } from "../Language";
@@ -13,8 +13,22 @@ const ToggleDarkMode = (mode: Boolean, setMode: Function) => {
   setMode(mode);
 }
 
-export const Header:NextPage<HomePageProps> = ({
+export type HeaderProps = {
+  language        : LANG_ITEM,
+  homePageRef     : RefObject<HTMLDivElement>,
+  skillsPageRef   : RefObject<HTMLDivElement>,
+  timelinePageRef : RefObject<HTMLDivElement>,
+  projectsPageRef : RefObject<HTMLDivElement>,
+  contactPageRef  : RefObject<HTMLDivElement>,
+}
+
+export const Header:NextPage<HeaderProps> = ({
   language,
+  homePageRef,
+  skillsPageRef,
+  timelinePageRef,
+  projectsPageRef,
+  contactPageRef,
   ...props
 }) => {
   const { currentMode, toggleMode } = useGlobalContext();
@@ -42,14 +56,12 @@ export const Header:NextPage<HomePageProps> = ({
       </div>
 
       <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-      <div className="text-sm lg:flex-grow">
-        {Array.isArray(language.navbarItem) && language.navbarItem.map((navItem: LANG_ITEM, index: number) => {
-          return(
-            <Link href={navItem.href} key={"_header_" + index}>
-              <a className={"block mt-4 lg:inline-block lg:mt-0 text-black dark:text-white " + (index === 0 ? 'ml-10' : 'ml-6')}>{navItem.content}</a>
-            </Link>
-          )
-        })}
+        <div className="text-sm lg:flex-grow">
+          <p className={"cursor-pointer block mt-4 lg:inline-block lg:mt-0 text-black dark:text-white ml-6"} onClick={() => homePageRef.current?.scrollIntoView()}>{language.navbarItem.home}</p>
+          <p className={"cursor-pointer block mt-4 lg:inline-block lg:mt-0 text-black dark:text-white ml-6"} onClick={() => skillsPageRef.current?.scrollIntoView()}>{language.navbarItem.skills}</p>
+          <p className={"cursor-pointer block mt-4 lg:inline-block lg:mt-0 text-black dark:text-white ml-6"} onClick={() => timelinePageRef.current?.scrollIntoView()}>{language.navbarItem.timeline}</p>
+          <p className={"cursor-pointer block mt-4 lg:inline-block lg:mt-0 text-black dark:text-white ml-6"} onClick={() => projectsPageRef.current?.scrollIntoView()}>{language.navbarItem.projects}</p>
+          <p className={"cursor-pointer block mt-4 lg:inline-block lg:mt-0 text-black dark:text-white ml-6"} onClick={() => contactPageRef.current?.scrollIntoView()}>{language.navbarItem.contact}</p>
         </div>
         <div>
           <div className="m-2 p-2 rounded-md align-middle cursor-pointer inline-block border-2 border-black dark:bg-white dark:border-white text-center" onClick={() => ToggleDarkMode(!currentMode, toggleMode)}>

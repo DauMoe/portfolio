@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import { forwardRef } from "react";
 import { useGlobalContext } from "../Context";
 import { LANG_ITEM } from "../Language";
 
@@ -6,15 +7,12 @@ export type ProjectsProps = {
   language: LANG_ITEM
 }
 
-export const Projects: NextPage<ProjectsProps> = ({
-  language,
-  ...props
-}) => {
+export const Projects = forwardRef<HTMLDivElement, ProjectsProps>(({language, ...props}, ProjectsPageRef) => {
   const { currentLang } = useGlobalContext();
 
   return(
-    <section className="min-h-screen relative" id="projects">
+    <div className="min-h-screen relative" ref={ProjectsPageRef}>
 
-    </section>
+    </div>
   )
-}
+});
