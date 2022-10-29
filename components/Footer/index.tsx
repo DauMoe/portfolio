@@ -10,7 +10,7 @@ export type FooterProps = {
   language: LANG_ITEM
 }
 
-export const Footer = forwardRef<HTMLDivElement, FooterProps>(({language, ...props}, ContactPageRef) => {
+const Footer = forwardRef<HTMLDivElement, FooterProps>(({language, ...props}, ContactPageRef) => {
   return(
     <div ref={ContactPageRef}>
       <div className="bg-slate-300 dark:bg-slate-900 relative z-40 px-16 transition delay-150">
@@ -61,3 +61,7 @@ export const Footer = forwardRef<HTMLDivElement, FooterProps>(({language, ...pro
     </div>
   );
 });
+
+Footer.displayName = "Footer";
+
+export default Footer;

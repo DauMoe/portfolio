@@ -1,15 +1,15 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useEffect, useRef } from 'react';
-import { Contact } from '../components/Contact';
+import Contact from '../components/Contact';
 import { useGlobalContext } from '../components/Context';
-import { Footer } from '../components/Footer';
-import { Header } from '../components/Header';
-import { HomePage } from '../components/HomePage'
+import Footer from '../components/Footer';
+import Navbar from '../components/Header';
+import HomePage from '../components/HomePage';
 import { lang } from '../components/Language'
-import { Projects } from '../components/Projects';
-import { Skills } from '../components/Skills';
-import { Timeline } from '../components/Timeline';
+import Projects from '../components/Projects';
+import Skills from '../components/Skills';
+import Timeline from '../components/Timeline';
 
 const Home: NextPage = () => {
   const { currentMode, currentLang }  = useGlobalContext();
@@ -31,7 +31,7 @@ const Home: NextPage = () => {
         <meta property="og:title" content={language.pageTitle.welcome} key="title" />
       </Head>
       <div className='transition delay-150 dark:bg-slate-800 bg-slate-100'>
-        <Header 
+        <Navbar 
           language={language} 
           homePageRef={HomePageRef}
           skillsPageRef={SkillsPageRef}

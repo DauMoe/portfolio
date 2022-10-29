@@ -12,7 +12,7 @@ export type SkillsProps = {
   language: LANG_ITEM
 }
 
-export const Skills = forwardRef<HTMLDivElement, SkillsProps>(({language, ...props}, SkillsPageRef) => {
+const Skills = forwardRef<HTMLDivElement, SkillsProps>(({language, ...props}, SkillsPageRef) => {
   const { currentMode } = useGlobalContext();
   return(
     <div className="min-h-screen relative" ref={SkillsPageRef}>
@@ -41,3 +41,7 @@ export const Skills = forwardRef<HTMLDivElement, SkillsProps>(({language, ...pro
     </div>
   )
 });
+
+Skills.displayName = "SkillSection";
+
+export default Skills;

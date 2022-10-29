@@ -85,7 +85,7 @@ export const FAANG_Resume: NextPage = () => {
                   <li>Description:</li>
                 </ul>
                 <ul className="list-[circle] pl-10">
-                  <li>Working as Outsource Frontend developer. Developer new feature and improve UX/UI with client's design team</li>
+                  <li>Working as Outsource Frontend developer. Developer new feature and improve UX/UI with client&apos;s design team</li>
                   <li>Deploy, fix bug and communicate directly with client</li>
                   <li>Help other team to develop new features</li>
                 </ul>
@@ -121,7 +121,7 @@ export const FAANG_Resume: NextPage = () => {
                     <li>Description:</li>
                   </ul>
                   <ul className="list-[circle] pl-10">
-                    <li>Social media app: Newfeed, Chat, Add/Ufriend, Update profile/avatar, Video Call (working not good)</li>
+                    <li>Social media app: Newfeed, Chat, Add/Unfriend, Update profile/avatar, Video Call (working not good)</li>
                     <li>Design system base on client requirements</li>
                     <li>Design UI + coding Android App. Technology: React Native + PeerJs</li>
                     <li>Setup Database and coding the Backend side. Technology: NodeJs + MariaDB</li>
@@ -149,8 +149,14 @@ export const FAANG_Resume: NextPage = () => {
               </div>
             </div>
             <div className="mt-2">
-              <div className="flex justify-between items-center">
-                <b>A lot of freelancer projects. All of them use NodeJs + MariaDB + ReactJs</b>
+              <div className="flex justify-between font-light text-sm items-center text-red-700 italic">
+                <b>* And a lot of freelancer projects. All of them use NodeJs + MariaDB + ReactJs. You can refer my&nbsp;
+                  <Link href={"https://github.com/DauMoe"} passHref>
+                    <a target="_blank" rel="noopener noreferrer" className="text-blue-900 underline">
+                      Github
+                    </a>
+                  </Link>
+                </b>
               </div>
             </div>
           </div>

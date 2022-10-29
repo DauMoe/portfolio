@@ -6,7 +6,7 @@ import { SiZalo } from "react-icons/si";
 import { BsSkype } from 'react-icons/bs';
 import Link from 'next/link';
 
-export const Contact: NextPage = () => {
+const Contact: NextPage = () => {
   const { currentMode } = useGlobalContext();
   return(
     <div className="fixed right-12 bottom-16 z-10">
@@ -27,3 +27,7 @@ export const Contact: NextPage = () => {
     </div>
   )
 }
+
+Contact.displayName = "ContactSection";
+
+export default Contact;

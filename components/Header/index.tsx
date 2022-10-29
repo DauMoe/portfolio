@@ -22,7 +22,7 @@ export type HeaderProps = {
   contactPageRef  : RefObject<HTMLDivElement>,
 }
 
-export const Header:NextPage<HeaderProps> = ({
+const Navbar:NextPage<HeaderProps> = ({
   language,
   homePageRef,
   skillsPageRef,
@@ -74,3 +74,7 @@ export const Header:NextPage<HeaderProps> = ({
     </nav>
   )
 }
+
+Navbar.displayName = "Navbar";
+
+export default Navbar;

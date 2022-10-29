@@ -14,4 +14,6 @@ const Resume: NextPage = () => {
   )
 }
 
+Resume.displayName = "MyResume";
+
 export default Resume;

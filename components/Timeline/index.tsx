@@ -5,7 +5,7 @@ export type TimelineProps = {
   language: LANG_ITEM
 }
 
-export const Timeline = forwardRef<HTMLDivElement, TimelineProps>(({language, ...props}, TimelinePageRef) => {
+const Timeline = forwardRef<HTMLDivElement, TimelineProps>(({language, ...props}, TimelinePageRef) => {
   return (
     <div className="min-h-screen relative" ref={TimelinePageRef}>
       <div className="absolute w-4/10 top-1/2 h-full -translate-y-1/2">
@@ -31,3 +31,7 @@ export const Timeline = forwardRef<HTMLDivElement, TimelineProps>(({language, ..
     </div>
   );
 });
+
+Timeline.displayName = "TimelineSection";
+
+export default Timeline;

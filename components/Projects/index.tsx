@@ -7,12 +7,14 @@ export type ProjectsProps = {
   language: LANG_ITEM
 }
 
-export const Projects = forwardRef<HTMLDivElement, ProjectsProps>(({language, ...props}, ProjectsPageRef) => {
-  const { currentLang } = useGlobalContext();
-
+const Projects = forwardRef<HTMLDivElement, ProjectsProps>(({language, ...props}, ProjectsPageRef) => {
   return(
     <div className="min-h-screen relative" ref={ProjectsPageRef}>
 
     </div>
   )
 });
+
+Projects.displayName = "ProjectSection";
+
+export default Projects;

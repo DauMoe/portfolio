@@ -12,7 +12,7 @@ export type HomePageProps = {
   language: LANG_ITEM
 }
 
-export const HomePage = forwardRef<HTMLDivElement, HomePageProps>(({language, ...props}, HomePageRef) => {
+const HomePage = forwardRef<HTMLDivElement, HomePageProps>(({language, ...props}, HomePageRef) => {
   return(
     <div className='h-screen relative w-full' ref={HomePageRef}>
       <div className='w-1/2 h-full absolute'>
@@ -49,3 +49,7 @@ export const HomePage = forwardRef<HTMLDivElement, HomePageProps>(({language, ..
     </div>
   )
 });
+
+HomePage.displayName = "HomePageSection";
+
+export default HomePage;
