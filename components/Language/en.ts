@@ -1,6 +1,6 @@
 const _EN = {
   pageTitle: {
-    welcome: "Hi"
+    welcome: "Lê Hoàng | Portfolio"
   },
   navbarItem: {
     home: "Home",
