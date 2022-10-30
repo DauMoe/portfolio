@@ -29,13 +29,15 @@ const HomePage = forwardRef<HTMLDivElement, HomePageProps>(({language, ...props}
           <p className='font-semibold text-[#df7e39] dark:text-orange-500 text-lg my-6 transition delay-100'>{language.homePage.position}</p>
           <p className='text-slate-800 dark:text-white text-lg leading-relaxed'>{language.homePage.description}</p>
           <div className="flex flex-row mt-10">
-          <div className="flex items-center text-base font-medium pl-4 pr-3 py-3 leading-none border-2 rounded text-orange-600 border-orange-600 dark:text-orange-400 dark:border-orange-400 cursor-pointer transition delay-100">
-            <span>Hire me</span>
-            <IconContext.Provider value={{size: '18'}}>
-              <FaPaperPlane className="ml-1"/>
-            </IconContext.Provider>
-          </div>
-          <Link href='/my_cv.pdf' passHref>
+          <Link href='https://www.linkedin.com/in/le-hoang-webdev' passHref>
+            <a target='_blank' rel="noopener noreferrer" className="flex items-center text-base font-medium pl-4 pr-3 py-3 leading-none border-2 rounded text-orange-600 border-orange-600 dark:text-orange-400 dark:border-orange-400 cursor-pointer transition delay-100">
+              <span>Hire me (Linkedin)</span>
+              <IconContext.Provider value={{size: '18'}}>
+                <FaPaperPlane className="ml-1"/>
+              </IconContext.Provider>
+            </a>
+          </Link>
+          <Link href='/resume' passHref>
             <a target='_blank' rel="noopener noreferrer" className="flex items-center text-base font-medium ml-4 pl-4 pr-3 py-3 leading-none border-2 rounded text-black border-black dark:text-white dark:border-white cursor-pointer">
               <span>My Resume</span>
               <IconContext.Provider value={{size: '20'}}>
