@@ -1,7 +1,6 @@
 import { NextPage } from "next";
 import Head from "next/head";
 import { FAANG_Resume } from "../components/Resume";
-import FAANG_PDF from "../components/Resume/FAANG_PDF";
 
 const Resume: NextPage = () => {
   return(
