@@ -27,7 +27,7 @@ const Home: NextPage = () => {
   return(
     <div className={currentMode ? 'dark' : ''}>
       <Head>
-        <title>{language.pageTitle.welcome}!</title>
+        <title>{language.pageTitle.welcome}</title>
         <meta property="og:title" content={language.pageTitle.welcome} key="title" />
       </Head>
       <div className='transition delay-150 dark:bg-slate-800 bg-slate-100'>

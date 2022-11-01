@@ -79,7 +79,7 @@ const ResumeComponents = () => {
           <div>
             <div className="flex justify-between items-center">
               <b>CMC Global | Frontend Developer</b>
-              <p className="font-xs">Dec 2021 - Sep 2022</p>
+              <p className="font-xs">May 2021 - Present</p>
             </div>
             <div>
               <ul className="list-disc pl-6">
@@ -96,7 +96,7 @@ const ResumeComponents = () => {
           <div className="mt-2">
             <div className="flex justify-between items-center">
               <b>CDiT | Fullstack Developer</b>
-              <p className="font-xs">May 2019 - Aug 2021</p>
+              <p className="font-xs">Sep 2019 - Apr 2022</p>
             </div>
             <div>
               <ul className="list-disc pl-6">
@@ -173,16 +173,18 @@ export const FAANG_Resume: NextPage = () => {
   return(
     <div className="w-full relative min-h-screen">
       <div className="flex fixed bottom-10 right-10 flex-col">
-        <span className="cursor-pointer bg-green-400 rounded-[50%] my-1" onClick={() => router.push("/")}>
-          <IconContext.Provider value={{size: '25', color: 'white'}}>
+        <span className="cursor-pointer rounded-[50%] my-1" onClick={() => router.push("/")}>
+          <IconContext.Provider value={{size: '35', color: 'black'}}>
             <AiTwotoneHome className="m-2"/>
           </IconContext.Provider>
         </span>
-        <span className="cursor-pointe bg-orange-500 rounded-[50%] my-1">
-          <IconContext.Provider value={{size: '25', color: 'white'}}>
-            <AiFillSave className="m-2"/>
-          </IconContext.Provider>
-        </span>
+        <Link href="/LeHuyHoang_Resume.pdf" passHref>
+          <a target="_blank" rel="noopener noreferrer" className="cursor-pointe rounded-[50%] my-1">
+            <IconContext.Provider value={{size: '35', color: 'black'}}>
+              <AiFillSave className="m-2"/>
+            </IconContext.Provider>
+          </a>
+        </Link>
       </div>
       <ResumeComponents/>
     </div>

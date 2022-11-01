@@ -18,10 +18,6 @@ const _EN = {
     timelineTitle: 'Timeline',
     timelineData: [
       {
-        companyName: "Side Project",
-        range: "Sep 2019 - Present",
-        description: '<ul className="ml-2"><li>- Position: Fullstack Developer</li><li>- Tech Stack: ReactJs + NodeJs + MariaDB</li></ul>'
-      }, {
         companyName: "CMC Global",
         range: "May 2022 - Present",
         description: '<ul className="ml-2"><li>- Position: Frontend Developer</li><li>- Tech Stack: NextJs + ReactJs</li></ul>'
@@ -33,7 +29,11 @@ const _EN = {
         companyName: "Student at PTIT",
         range: "Sep 2017 - Jan 2021",
         description: '<ul className="ml-2"><li>- Major: Information Security</li><li>- Level: Bachelor</li></ul>'
-      }
+      }, {
+        companyName: "Freelance Project",
+        range: "Sep 2019 - Present",
+        description: '<ul className="ml-2"><li>- Position: Fullstack Developer</li><li>- Tech Stack: ReactJs + NodeJs + MariaDB</li></ul>'
+      }      
     ]
   }
 }
