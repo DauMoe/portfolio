@@ -10,7 +10,7 @@ export type ProjectsProps = {
 const Projects = forwardRef<HTMLDivElement, ProjectsProps>(({language, ...props}, ProjectsPageRef) => {
   return(
     <div className="min-h-screen relative" ref={ProjectsPageRef}>
-
+      
     </div>
   )
 });
