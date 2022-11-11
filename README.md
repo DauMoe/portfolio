@@ -21,7 +21,7 @@ Here are some of my most relevant qualifications and accomplishments:
 - Familiar with NextJs, ReactJs, ReactNative, Redux, NPM, Yarn, Github, Gitlab, CLI, Linux, styled-components, TailwindCSS, etc
 - Can communicate with team members who use English as main language
 - Familiar working in an Agile/Scrum development process and used Jira and Confluence
-- At last, as a developer, can find and fix bugs, improve coding style
+- At last, as a developer, can find and fix bugs, improve coding style  
 I know how important the details are for a Front End Developer. My keen attention to detail and dedication to solving any problem at hand are what separates me from other candidates with similar qualifications. If you agree that I’d be a good fit for your organization, I would love to schedule an interview at your earliest convenience. Thanks for reading!
 
 Sincerely, 
