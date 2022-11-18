@@ -1,4 +1,11 @@
 name: Staging Deploy
-run-name: Testing
+run-name: deploy by ${{github.actor}}
 on: [push]
 jobs:
+ building_job:
+  name: Build
+  runs-on: ubuntu-20.04
+  steps:
+    - run: npm install
+    - run: npm run lint
+    - run: npm run build
