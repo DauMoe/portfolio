@@ -1,0 +1,4 @@
+name: Staging Deploy
+run-name: Testing
+on: [push]
+jobs:
