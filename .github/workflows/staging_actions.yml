@@ -1,15 +1,25 @@
 name: Staging Deploy
 run-name: deploy by ${{github.actor}}
-on: [push]
+on:
+  push:
+    branches: [master]
 jobs:
  building_job:
   name: Build
   runs-on: ubuntu-20.04
   steps:
-   - uses: actions/checkout@v3
-   - uses: actions/setup-node@v3
+   - name: Checkout
+     uses: actions/checkout@v3 #Checkout current branch to runner branch
+   - name: Setup Node v.3
+     uses: actions/setup-node@v3 #Setup node to run command line below
      with:
-      node-version: 14
-   - run: npm install
-   - run: npm run lint
-   - run: npm run build
+      node-version: 14 # we can use matrix stratery for testing multi version: Refer here: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs#specifying-the-nodejs-version
+      cache: "npm"
+   - name: Install library
+     run: npm ci # Same thing with `npm install` but prevent updates the lock file
+   - name: ESLint checking
+     run: npm run lint
+   - name: Run Jest test
+     run: npm run test
+   - name: Building next
+     run: npm run build
